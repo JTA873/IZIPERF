@@ -2494,6 +2494,172 @@
             color: #6a1b9a;
         }
 
+        /* Module Personnalisation - Rose/Magenta */
+        #sidebar-personalization-section {
+            border-left: 4px solid #e91e63;
+            background: linear-gradient(135deg, rgba(252, 228, 236, 0.3), rgba(255, 235, 238, 0.3));
+        }
+
+        #sidebar-personalization-section .sidebar-section-title {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            color: #ad1457;
+        }
+
+        #sidebar-personalization-section .sidebar-menu-item a {
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        #sidebar-personalization-section .sidebar-menu-item a:hover,
+        #sidebar-personalization-section .sidebar-menu-item a.active {
+            border-left: 3px solid #e91e63;
+            background: linear-gradient(135deg, rgba(252, 228, 236, 0.5), rgba(255, 235, 238, 0.5));
+        }
+
+        /* === STYLES SPÉCIFIQUES POUR LE MODULE PERSONNALISATION === */
+        #personalizationModule {
+            background: linear-gradient(135deg, #fce4ec 0%, #fff5f7 100%);
+            border: 1px solid #f8bbd9;
+        }
+
+        #personalizationModule .card,
+        #personalizationModule .container,
+        #personalizationModule .section {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #fce4ec;
+        }
+
+        /* Navigation du module personnalisation */
+        #personalizationModule .nav-tabs {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(233, 30, 99, 0.1);
+            margin-bottom: 25px;
+        }
+
+        #personalizationModule .nav-tab {
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid #f8bbd9;
+            color: #ad1457;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #personalizationModule .nav-tab:hover {
+            background: rgba(252, 228, 236, 0.8);
+            border-color: #e91e63;
+            transform: translateY(-2px);
+        }
+
+        #personalizationModule .nav-tab.active {
+            background: linear-gradient(135deg, #e91e63, #ad1457);
+            border-color: #e91e63;
+            color: white;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Sections du module personnalisation */
+        .personalization-section {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .personalization-section.active {
+            display: block;
+        }
+
+        /* Template cards avec effets hover */
+        .template-card {
+            position: relative;
+            overflow: hidden;
+            transform: scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .template-card:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        .template-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .template-card:hover::before {
+            left: 100%;
+        }
+
+        /* Animations pour le module personnalisation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styles pour les inputs de couleur personnalisés */
+        #personalizationModule input[type="color"] {
+            cursor: pointer;
+            border: 3px solid #e91e63;
+            transition: all 0.3s ease;
+        }
+
+        #personalizationModule input[type="color"]:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Aperçu de personnalisation */
+        #personalizationPreview {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #personalizationPreview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(233, 30, 99, 0.05) 0%, 
+                rgba(173, 20, 87, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        /* Responsive pour le module personnalisation */
+        @media (max-width: 768px) {
+            #personalizationModule .nav-tabs {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            #personalizationModule .nav-tab {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+            }
+
+            .template-card {
+                margin-bottom: 15px;
+            }
+        }
+
         /* === HARMONIE ONGLETS MODULES === */
         /* Onglet Commercial actif */
         .module-tab[onclick*="commercial"].active {
@@ -3403,6 +3569,35 @@
                 </ul>
             </div>
 
+            <!-- 🎨 GESTIONNAIRE DE PERSONNALISATION -->
+            <div class="sidebar-section" id="sidebar-personalization-section">
+                <div class="sidebar-section-title" onclick="toggleSidebarSection('sidebar-personalization-section')">
+                    <span>🎨</span>
+                    <span class="section-text">Personnalisation</span>
+                    <span class="expand-arrow">▶</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a onclick="showModule('personalization'); showPersonalizationTab('config');" id="sidebar-personalization-config" data-tooltip="Configuration Client">
+                            <span>⚙️</span>
+                            <span class="menu-text">Configuration</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a onclick="showModule('personalization'); showPersonalizationTab('templates');" id="sidebar-personalization-templates" data-tooltip="Templates & Aperçu">
+                            <span>📋</span>
+                            <span class="menu-text">Templates & Aperçu</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a onclick="showModule('personalization'); showPersonalizationTab('export');" id="sidebar-personalization-export" data-tooltip="Export/Import">
+                            <span>📤</span>
+                            <span class="menu-text">Export/Import</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
             <!-- Module Admin -->
             <div class="sidebar-section" id="sidebar-admin-section">
                 <div class="sidebar-section-title" onclick="showModule('admin')" style="cursor: pointer;">
@@ -3442,6 +3637,7 @@
         <div class="module-nav" style="display: none;">
             <button class="module-tab active" onclick="showModule('commercial')">💼 Module Commercial</button>
             <button class="module-tab" onclick="showModule('stocks')">📦 Module Stocks</button>
+            <button class="module-tab" onclick="showModule('personalization')">🎨 Personnalisation</button>
             <button class="module-tab" onclick="showModule('admin')">🔐 Module Admin</button>
             <button class="module-tab" onclick="showModule('formation')">🎓 Formation</button>
         </div>
@@ -4745,7 +4941,7 @@
                     <div id="adminContent" style="display: none;">
                         <div style="color: lightgreen; margin: 20px;">✅ Accès autorisé</div>
                         
-                        <!-- 🎨 GESTIONNAIRE DE PERSONNALISATION AVANCÉ -->
+                        <!-- ANCIEN GESTIONNAIRE SUPPRIMÉ - DÉPLACÉ VERS MODULE PERSONNALISATION -->
                         <div style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 2px solid #667eea; padding: 30px; border-radius: 15px; margin: 20px 0; text-align: left;">
                             <h3 style="color: #667eea; margin-bottom: 25px; text-align: center; font-size: 1.4rem;">🎨 Gestionnaire de Personnalisation Client</h3>
                             
@@ -4879,7 +5075,7 @@
                                         <button class="btn btn-primary" onclick="exportPersonalization()" style="width: 100%;">� Télécharger Config</button>
                                     </div>
                                     <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
-                                        <h4 style="color: #667eea; margin-b: 15px;">📥 Importer Configuration</h4>
+                                        <h4 style="color: #667eea; margin-bottom: 15px;">📥 Importer Configuration</h4>
                                         <p style="color: #666; margin-bottom: 15px;">Chargez une configuration depuis un fichier JSON.</p>
                                         <input type="file" id="configFileInput" accept=".json" style="width: 100%; margin-bottom: 10px;">
                                         <button class="btn btn-success" onclick="importPersonalization()" style="width: 100%;">📥 Charger Config</button>
@@ -5481,6 +5677,341 @@ Ex: Produit A | 1500 | correction_positive"
         <div class="mini-chat-input-container">
             <input type="text" class="mini-chat-input" id="miniChatInput" placeholder="Tapez votre question..." onkeypress="if(event.key==='Enter') sendMiniChatMessage()">
             <button class="mini-chat-send" onclick="sendMiniChatMessage()">➤</button>
+        </div>
+    </div>
+
+    <!-- Module Personnalisation -->
+    <div id="personalizationModule" class="module">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showPersonalizationSection('config')">⚙️ Configuration</button>
+            <button class="nav-tab" onclick="showPersonalizationSection('templates-preview')">🎨 Templates & Aperçu</button>
+            <button class="nav-tab" onclick="showPersonalizationSection('export-import')">📤 Export/Import</button>
+        </div>
+
+        <!-- Section Configuration -->
+        <div id="personalization-config" class="personalization-section active">
+            <div class="formation-hero" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">🎨</div>
+                <h1>Personnalisation Client</h1>
+                <p class="formation-subtitle">Adaptez l'application aux couleurs et besoins de vos clients</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <!-- Informations Entreprise -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1); border: 2px solid #f0f2f8;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">🏢</span>
+                        Informations Entreprise
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Nom de l'entreprise *</label>
+                        <input type="text" id="clientName" placeholder="Ex: Boulangerie Martin" onchange="previewPersonalization()" 
+                               style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 16px; transition: all 0.3s ease;">
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Secteur d'activité</label>
+                        <select id="clientIndustry" onchange="loadIndustryTemplate(); previewPersonalization()" 
+                                style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 16px; background: white;">
+                            <option value="">-- Sélectionner --</option>
+                            <option value="Commerce">🛍️ Commerce</option>
+                            <option value="Restauration">🍽️ Restauration</option>
+                            <option value="Services">🔧 Services</option>
+                            <option value="Production">🏭 Production</option>
+                            <option value="Distribution">📦 Distribution</option>
+                            <option value="Santé">🏥 Santé</option>
+                            <option value="Éducation">🎓 Éducation</option>
+                            <option value="Finance">💰 Finance</option>
+                            <option value="Autre">📋 Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Devise</label>
+                        <select id="clientCurrency" onchange="previewPersonalization()" 
+                                style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 16px; background: white;">
+                            <option value="FCFA">FCFA</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="USD">USD ($)</option>
+                            <option value="XOF">XOF</option>
+                            <option value="MAD">MAD (DH)</option>
+                            <option value="XAF">XAF</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Logo URL (optionnel)</label>
+                        <input type="url" id="clientLogo" placeholder="https://monsite.com/logo.png" onchange="previewPersonalization()" 
+                               style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 16px;">
+                    </div>
+                </div>
+                
+                <!-- Thème Visuel -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1); border: 2px solid #f0f2f8;">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">🎨</span>
+                        Thème Visuel
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Couleur principale</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="color" id="primaryColor" value="#667eea" onchange="previewPersonalization()" 
+                                   style="width: 60px; height: 50px; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;">
+                            <input type="text" id="primaryColorText" value="#667eea" onchange="syncColorInputs('primary')" 
+                                   style="flex: 1; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-family: monospace;">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Couleur secondaire</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="color" id="secondaryColor" value="#764ba2" onchange="previewPersonalization()" 
+                                   style="width: 60px; height: 50px; border: 2px solid #ddd; border-radius: 8px; cursor: pointer;">
+                            <input type="text" id="secondaryColorText" value="#764ba2" onchange="syncColorInputs('secondary')" 
+                                   style="flex: 1; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-family: monospace;">
+                        </div>
+                    </div>
+                    
+                    <!-- Couleurs prédéfinies -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 12px; font-weight: bold; color: #555;">Thèmes prédéfinis</label>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                            <button onclick="applyColorTheme('#667eea', '#764ba2')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #667eea, #764ba2); cursor: pointer;" 
+                                    title="Bleu IziPerf"></button>
+                            <button onclick="applyColorTheme('#e74c3c', '#c0392b')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #e74c3c, #c0392b); cursor: pointer;" 
+                                    title="Rouge Restaurant"></button>
+                            <button onclick="applyColorTheme('#27ae60', '#229954')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #27ae60, #229954); cursor: pointer;" 
+                                    title="Vert Commerce"></button>
+                            <button onclick="applyColorTheme('#f39c12', '#e67e22')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #f39c12, #e67e22); cursor: pointer;" 
+                                    title="Orange Production"></button>
+                            <button onclick="applyColorTheme('#9b59b6', '#8e44ad')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #9b59b6, #8e44ad); cursor: pointer;" 
+                                    title="Violet Services"></button>
+                            <button onclick="applyColorTheme('#34495e', '#2c3e50')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #34495e, #2c3e50); cursor: pointer;" 
+                                    title="Gris Corporate"></button>
+                            <button onclick="applyColorTheme('#16a085', '#1abc9c')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #16a085, #1abc9c); cursor: pointer;" 
+                                    title="Turquoise Santé"></button>
+                            <button onclick="applyColorTheme('#2980b9', '#3498db')" 
+                                    style="height: 40px; border: 2px solid #ddd; border-radius: 8px; background: linear-gradient(45deg, #2980b9, #3498db); cursor: pointer;" 
+                                    title="Bleu Ciel"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Actions -->
+            <div style="display: flex; gap: 20px; margin-top: 30px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-success" onclick="savePersonalization()" 
+                        style="padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 15px rgba(40,167,69,0.3);">
+                    💾 Sauvegarder Configuration
+                </button>
+                <button class="btn btn-primary" onclick="applyPersonalizationInstant()" 
+                        style="padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 15px rgba(0,123,255,0.3);">
+                    ⚡ Appliquer Instantanément
+                </button>
+                <button class="btn btn-warning" onclick="resetToDefault()" 
+                        style="padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 15px rgba(255,193,7,0.3);">
+                    🔄 Réinitialiser IziPerf
+                </button>
+                <button class="btn btn-danger" onclick="removePersonalization()" 
+                        style="padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 25px; box-shadow: 0 4px 15px rgba(220,53,69,0.3);">
+                    🗑️ Supprimer Personnalisation
+                </button>
+            </div>
+        </div>
+
+        <!-- Section Templates & Aperçu -->
+        <div id="personalization-templates-preview" class="personalization-section" style="display: none;">
+            <div class="formation-hero" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">👁️</div>
+                <h1>Templates & Aperçu</h1>
+                <p class="formation-subtitle">Choisissez un template prédéfini et visualisez le résultat</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <!-- Templates -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1);">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">📋</span>
+                        Templates par Secteur
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                        <!-- Templates seront générés dynamiquement -->
+                        <div class="template-card" onclick="applyTemplate('Restaurant')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #e74c3c, #c0392b); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🍽️</div>
+                            <h4 style="margin: 0; font-size: 18px;">Restauration</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Rouge chaleureux</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Commerce')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #27ae60, #229954); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🛍️</div>
+                            <h4 style="margin: 0; font-size: 18px;">Commerce</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Vert confiance</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Production')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #f39c12, #e67e22); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🏭</div>
+                            <h4 style="margin: 0; font-size: 18px;">Production</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Orange énergie</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Services')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #9b59b6, #8e44ad); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🔧</div>
+                            <h4 style="margin: 0; font-size: 18px;">Services</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Violet premium</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Santé')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #16a085, #1abc9c); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🏥</div>
+                            <h4 style="margin: 0; font-size: 18px;">Santé</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Turquoise médical</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Finance')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #34495e, #2c3e50); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">💰</div>
+                            <h4 style="margin: 0; font-size: 18px;">Finance</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Gris corporate</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Éducation')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #2980b9, #3498db); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">🎓</div>
+                            <h4 style="margin: 0; font-size: 18px;">Éducation</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Bleu savoir</p>
+                        </div>
+                        
+                        <div class="template-card" onclick="applyTemplate('Distribution')" 
+                             style="padding: 20px; border: 2px solid #e9ecef; border-radius: 12px; cursor: pointer; background: linear-gradient(45deg, #667eea, #764ba2); color: white; text-align: center; transition: all 0.3s ease;">
+                            <div style="font-size: 30px; margin-bottom: 10px;">📦</div>
+                            <h4 style="margin: 0; font-size: 18px;">Distribution</h4>
+                            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Bleu IziPerf</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Aperçu -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1);">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">👁️</span>
+                        Aperçu Live
+                    </h3>
+                    
+                    <div id="personalizationPreview" style="border: 2px solid #e9ecef; border-radius: 12px; padding: 20px; min-height: 300px; background: #f8f9fa;">
+                        <div style="text-align: center; color: #666; padding: 60px 20px;">
+                            <div style="font-size: 48px; margin-bottom: 15px;">🎨</div>
+                            <p>Sélectionnez des options dans l'onglet Configuration<br>ou choisissez un template pour voir l'aperçu</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button class="btn btn-primary" onclick="previewPersonalization()" 
+                                style="padding: 12px 25px; font-weight: bold; border-radius: 20px;">
+                            🔄 Actualiser Aperçu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Export/Import -->
+        <div id="personalization-export-import" class="personalization-section" style="display: none;">
+            <div class="formation-hero" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">📤</div>
+                <h1>Export & Import</h1>
+                <p class="formation-subtitle">Sauvegardez et partagez vos configurations</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <!-- Export -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1);">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">📤</span>
+                        Exporter Configuration
+                    </h3>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <h4 style="color: #495057; margin-bottom: 15px;">📋 Configuration actuelle</h4>
+                        <div id="currentConfigDisplay" style="font-family: monospace; font-size: 12px; color: #6c757d; max-height: 200px; overflow-y: auto; border: 1px solid #dee2e6; padding: 10px; border-radius: 5px;">
+                            Chargement de la configuration...
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button class="btn btn-primary" onclick="exportPersonalization()" 
+                                style="width: 100%; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 25px; margin-bottom: 10px;">
+                            📥 Télécharger Config.json
+                        </button>
+                        <small style="color: #6c757d; font-size: 12px;">
+                            💾 Fichier JSON contenant toute la configuration client
+                        </small>
+                    </div>
+                </div>
+                
+                <!-- Import -->
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(102,126,234,0.1);">
+                    <h3 style="color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 24px;">📥</span>
+                        Importer Configuration
+                    </h3>
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <h4 style="color: #495057; margin-bottom: 15px;">📁 Sélectionner fichier</h4>
+                        <input type="file" id="configFileInput" accept=".json" 
+                               style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; background: white; margin-bottom: 15px;">
+                        <div id="importPreview" style="font-family: monospace; font-size: 12px; color: #6c757d; max-height: 150px; overflow-y: auto; border: 1px solid #dee2e6; padding: 10px; border-radius: 5px; display: none;">
+                            Aperçu du fichier importé...
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button class="btn btn-success" onclick="importPersonalization()" 
+                                style="width: 100%; padding: 15px; font-size: 16px; font-weight: bold; border-radius: 25px; margin-bottom: 10px;">
+                            📤 Charger Configuration
+                        </button>
+                        <small style="color: #6c757d; font-size: 12px;">
+                            ⚡ Configuration appliquée instantanément
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Guide d'utilisation -->
+            <div style="background: #e8f4f8; padding: 25px; border-radius: 15px; margin-top: 30px; border-left: 5px solid #17a2b8;">
+                <h4 style="color: #17a2b8; margin-bottom: 15px;">💡 Guide d'utilisation</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: #495057;">
+                    <div>
+                        <h5 style="color: #17a2b8;">📤 Export</h5>
+                        <ul style="margin: 10px 0; padding-left: 20px; font-size: 14px;">
+                            <li>Sauvegarde toute la configuration actuelle</li>
+                            <li>Fichier JSON réutilisable</li>
+                            <li>Idéal pour sauvegarder ou partager</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 style="color: #17a2b8;">📥 Import</h5>
+                        <ul style="margin: 10px 0; padding-left: 20px; font-size: 14px;">
+                            <li>Charge une configuration depuis un fichier</li>
+                            <li>Application immédiate des changements</li>
+                            <li>Pratique pour dupliquer des configurations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -6239,6 +6770,22 @@ Ex: Produit A | 1500 | correction_positive"
                 // Pour la formation, activer le titre de section (pas de sous-menu)
                 const formationTitle = document.querySelector('#sidebar-formation-section .sidebar-section-title');
                 if (formationTitle) formationTitle.classList.add('active');
+            } else if (moduleId === 'personalization') {
+                // Ouvrir la section personnalisation
+                const personalizationSection = document.getElementById('sidebar-personalization-section');
+                if (personalizationSection && !personalizationSection.classList.contains('expanded')) {
+                    toggleSidebarSection('sidebar-personalization-section');
+                }
+                
+                if (sectionId) {
+                    const elementId = `sidebar-personalization-${sectionId}`;
+                    const element = document.getElementById(elementId);
+                    if (element) element.classList.add('active');
+                } else {
+                    // Par défaut, activer la configuration
+                    const configElement = document.getElementById('sidebar-personalization-config');
+                    if (configElement) configElement.classList.add('active');
+                }
             }
 
             // Fermer la sidebar après sélection (effet de repliement)
@@ -6306,6 +6853,8 @@ Ex: Produit A | 1500 | correction_positive"
                 initializeAdminModule();
             } else if (moduleId === 'formation') {
                 initializeFormationModule();
+            } else if (moduleId === 'personalization') {
+                initializePersonalizationModule();
             }
 
             // Mettre à jour la sidebar
@@ -23091,6 +23640,46 @@ Date [ESPACES] Client [ESPACES] Montant
             showFormationSection('guide-rapide');
         }
         
+        // ========================================
+        // FONCTIONS MODULE PERSONNALISATION
+        // ========================================
+        
+        function initializePersonalizationModule() {
+            console.log('🎨 Initialisation du module Personnalisation');
+            
+            // Charger la configuration actuelle dans les champs
+            loadCurrentConfigIntoForm();
+            
+            // Afficher la première section par défaut
+            showPersonalizationSection('config');
+            
+            // Mettre à jour l'aperçu
+            setTimeout(() => {
+                previewPersonalization();
+            }, 500);
+        }
+        
+        // Fonction pour charger la configuration actuelle dans le formulaire
+        function loadCurrentConfigIntoForm() {
+            const clientName = document.getElementById('clientName');
+            const clientIndustry = document.getElementById('clientIndustry');
+            const clientCurrency = document.getElementById('clientCurrency');
+            const clientLogo = document.getElementById('clientLogo');
+            const primaryColor = document.getElementById('primaryColor');
+            const primaryColorText = document.getElementById('primaryColorText');
+            const secondaryColor = document.getElementById('secondaryColor');
+            const secondaryColorText = document.getElementById('secondaryColorText');
+            
+            if (clientName) clientName.value = CLIENT_CONFIG.name;
+            if (clientIndustry) clientIndustry.value = CLIENT_CONFIG.industry;
+            if (clientCurrency) clientCurrency.value = CLIENT_CONFIG.currency;
+            if (clientLogo) clientLogo.value = CLIENT_CONFIG.logo || '';
+            if (primaryColor) primaryColor.value = CLIENT_CONFIG.primaryColor;
+            if (primaryColorText) primaryColorText.value = CLIENT_CONFIG.primaryColor;
+            if (secondaryColor) secondaryColor.value = CLIENT_CONFIG.secondaryColor;
+            if (secondaryColorText) secondaryColorText.value = CLIENT_CONFIG.secondaryColor;
+        }
+        
         function showFormationSection(sectionId) {
             console.log(`🎓 Navigation vers la section Formation: ${sectionId}`);
             
@@ -23138,6 +23727,74 @@ Date [ESPACES] Client [ESPACES] Montant
             const formationModule = document.getElementById('formationModule');
             if (formationModule) {
                 formationModule.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        // ===== FONCTION NAVIGATION MODULE PERSONNALISATION =====
+        
+        function showPersonalizationSection(sectionId) {
+            console.log(`🎨 Navigation vers la section Personnalisation: ${sectionId}`);
+            
+            // Masquer toutes les sections de personnalisation
+            const personalizationSections = document.querySelectorAll('.personalization-section');
+            personalizationSections.forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            
+            // Désactiver tous les onglets de personnalisation
+            const personalizationTabs = document.querySelectorAll('#personalizationModule .nav-tab');
+            personalizationTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Afficher la section sélectionnée
+            const selectedSection = document.getElementById(`personalization-${sectionId}`);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                selectedSection.style.display = 'block';
+            }
+            
+            // Activer l'onglet correspondant
+            const activeTab = document.querySelector(`[onclick="showPersonalizationSection('${sectionId}')"]`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+            
+            // Mettre à jour l'affichage selon la section
+            if (sectionId === 'export-import') {
+                updateCurrentConfigDisplay();
+            } else if (sectionId === 'templates-preview') {
+                previewPersonalization();
+            }
+            
+            // Ajouter une animation d'entrée
+            if (selectedSection) {
+                selectedSection.style.opacity = '0';
+                selectedSection.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    selectedSection.style.transition = 'all 0.3s ease';
+                    selectedSection.style.opacity = '1';
+                    selectedSection.style.transform = 'translateY(0)';
+                }, 50);
+            }
+        }
+        
+        // Fonction pour mettre à jour l'affichage de la configuration actuelle
+        function updateCurrentConfigDisplay() {
+            const display = document.getElementById('currentConfigDisplay');
+            if (display) {
+                const config = {
+                    name: document.getElementById('clientName')?.value || CLIENT_CONFIG.name,
+                    industry: document.getElementById('clientIndustry')?.value || CLIENT_CONFIG.industry,
+                    currency: document.getElementById('clientCurrency')?.value || CLIENT_CONFIG.currency,
+                    primaryColor: document.getElementById('primaryColor')?.value || CLIENT_CONFIG.primaryColor,
+                    secondaryColor: document.getElementById('secondaryColor')?.value || CLIENT_CONFIG.secondaryColor,
+                    logo: document.getElementById('clientLogo')?.value || CLIENT_CONFIG.logo,
+                    dateFormat: CLIENT_CONFIG.dateFormat
+                };
+                
+                display.innerHTML = `<pre>${JSON.stringify(config, null, 2)}</pre>`;
             }
         }
         
