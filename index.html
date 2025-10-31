@@ -3403,6 +3403,14 @@
                 </ul>
             </div>
 
+            <!-- Gestionnaire de Personnalisation -->
+            <div class="sidebar-section" id="sidebar-personalization-section">
+                <div class="sidebar-section-title" onclick="showModule('personalization')" style="cursor: pointer;">
+                    <span>🎨</span>
+                    <span class="section-text">Personnalisation</span>
+                </div>
+            </div>
+
             <!-- Module Admin -->
             <div class="sidebar-section" id="sidebar-admin-section">
                 <div class="sidebar-section-title" onclick="showModule('admin')" style="cursor: pointer;">
@@ -5817,6 +5825,178 @@ Ex: Produit A | 1500 | correction_positive"
         </div>
     </div>
 
+    <!-- Module Personnalisation -->
+    <div id="personalizationModule" class="module">
+        <div class="dashboard-container" style="margin-left: 0; width: 100%; padding: 20px;">
+            <div class="header">
+                <h1>🎨 Gestionnaire de Personnalisation</h1>
+                <div class="last-update">Configurez votre application selon vos besoins</div>
+            </div>
+
+            <!-- 🎨 GESTIONNAIRE DE PERSONNALISATION AVANCÉ -->
+            <div style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 2px solid #667eea; padding: 30px; border-radius: 15px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #667eea; margin-bottom: 25px; text-align: center; font-size: 1.4rem;">🎨 Gestionnaire de Personnalisation Client</h3>
+                
+                <!-- Tabs Navigation -->
+                <div style="display: flex; margin-bottom: 25px; border-bottom: 2px solid #eee; flex-wrap: wrap;">
+                    <button class="personalization-tab active" onclick="showPersonalizationTab('config')" style="flex: 1; min-width: 140px; padding: 12px; border: none; background: #667eea; color: white; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px; margin-bottom: 2px;">
+                        ⚙️ Configuration
+                    </button>
+                    <button class="personalization-tab" onclick="showPersonalizationTab('preview')" style="flex: 1; min-width: 140px; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px; margin-bottom: 2px;">
+                        👁️ Prévisualisation
+                    </button>
+                    <button class="personalization-tab" onclick="showPersonalizationTab('templates')" style="flex: 1; min-width: 140px; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px; margin-bottom: 2px;">
+                        📋 Templates
+                    </button>
+                    <button class="personalization-tab" onclick="showPersonalizationTab('export')" style="flex: 1; min-width: 140px; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0; margin-bottom: 2px;">
+                        📤 Export/Import
+                    </button>
+                </div>
+                
+                <!-- TAB: Configuration -->
+                <div id="personalization-config" class="personalization-content active">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Informations Entreprise -->
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">🏢 Informations Entreprise</h4>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Nom de l'entreprise *</label>
+                                <input type="text" id="clientName" placeholder="Ex: Boulangerie Martin" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Secteur d'activité</label>
+                                <select id="clientIndustry" onchange="loadIndustryTemplate(); previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                                    <option value="">-- Sélectionner --</option>
+                                    <option value="Commerce">🛍️ Commerce</option>
+                                    <option value="Restauration">🍽️ Restauration</option>
+                                    <option value="Services">🔧 Services</option>
+                                    <option value="Production">🏭 Production</option>
+                                    <option value="Distribution">📦 Distribution</option>
+                                    <option value="Santé">🏥 Santé</option>
+                                    <option value="Éducation">🎓 Éducation</option>
+                                    <option value="Finance">💰 Finance</option>
+                                    <option value="Autre">📋 Autre</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Devise</label>
+                                <select id="clientCurrency" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                                    <option value="FCFA">FCFA</option>
+                                    <option value="EUR">EUR (€)</option>
+                                    <option value="USD">USD ($)</option>
+                                    <option value="XOF">XOF</option>
+                                    <option value="MAD">MAD (DH)</option>
+                                    <option value="XAF">XAF</option>
+                                </select>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Logo URL (optionnel)</label>
+                                <input type="url" id="clientLogo" placeholder="https://monsite.com/logo.png" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                            </div>
+                        </div>
+                        
+                        <!-- Thème Visuel -->
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">🎨 Thème Visuel</h4>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Couleur principale</label>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <input type="color" id="primaryColor" value="#667eea" onchange="previewPersonalization()" style="width: 60px; height: 40px; border: 2px solid #ddd; border-radius: 6px; cursor: pointer;">
+                                    <input type="text" id="primaryColorText" value="#667eea" onchange="syncColorInputs('primary')" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;">
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Couleur secondaire</label>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <input type="color" id="secondaryColor" value="#764ba2" onchange="previewPersonalization()" style="width: 60px; height: 40px; border: 2px solid #ddd; border-radius: 6px; cursor: pointer;">
+                                    <input type="text" id="secondaryColorText" value="#764ba2" onchange="syncColorInputs('secondary')" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;">
+                                </div>
+                            </div>
+                            
+                            <!-- Couleurs prédéfinies -->
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Thèmes prédéfinis</label>
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                                    <button onclick="applyColorTheme('#667eea', '#764ba2')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #667eea, #764ba2); cursor: pointer;" title="Bleu IziPerf"></button>
+                                    <button onclick="applyColorTheme('#e74c3c', '#c0392b')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #e74c3c, #c0392b); cursor: pointer;" title="Rouge Restaurant"></button>
+                                    <button onclick="applyColorTheme('#27ae60', '#229954')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #27ae60, #229954); cursor: pointer;" title="Vert Commerce"></button>
+                                    <button onclick="applyColorTheme('#f39c12', '#e67e22')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #f39c12, #e67e22); cursor: pointer;" title="Orange Production"></button>
+                                    <button onclick="applyColorTheme('#9b59b6', '#8e44ad')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #9b59b6, #8e44ad); cursor: pointer;" title="Violet Services"></button>
+                                    <button onclick="applyColorTheme('#34495e', '#2c3e50')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #34495e, #2c3e50); cursor: pointer;" title="Gris Corporate"></button>
+                                    <button onclick="applyColorTheme('#16a085', '#1abc9c')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #16a085, #1abc9c); cursor: pointer;" title="Turquoise Santé"></button>
+                                    <button onclick="applyColorTheme('#2980b9', '#3498db')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #2980b9, #3498db); cursor: pointer;" title="Bleu Ciel"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn btn-success" onclick="savePersonalization()" style="padding: 12px 25px; font-weight: bold;">💾 Sauvegarder Configuration</button>
+                        <button class="btn btn-primary" onclick="applyPersonalizationInstant()" style="padding: 12px 25px; font-weight: bold;">⚡ Appliquer Instantanément</button>
+                        <button class="btn btn-warning" onclick="resetToDefault()" style="padding: 12px 25px; font-weight: bold;">🔄 Réinitialiser IziPerf</button>
+                        <button class="btn btn-danger" onclick="removePersonalization()" style="padding: 12px 25px; font-weight: bold;">🗑️ Supprimer Personnalisation</button>
+                    </div>
+                </div>
+                
+                <!-- TAB: Prévisualisation -->
+                <div id="personalization-preview" class="personalization-content" style="display: none;">
+                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                        <h4 style="color: #667eea; margin-bottom: 15px;">👁️ Aperçu de la Personnalisation</h4>
+                        <div id="personalizationPreview" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; min-height: 200px; background: #f8f9fa;">
+                            <div style="text-align: center; color: #666; padding: 40px;">
+                                Sélectionnez des options dans l'onglet Configuration pour voir l'aperçu
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TAB: Templates -->
+                <div id="personalization-templates" class="personalization-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <!-- Template cards will be dynamically generated -->
+                    </div>
+                </div>
+                
+                <!-- TAB: Export/Import -->
+                <div id="personalization-export" class="personalization-content" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">📤 Exporter Configuration</h4>
+                            <p style="color: #666; margin-bottom: 15px;">Sauvegardez la configuration actuelle dans un fichier JSON.</p>
+                            <button class="btn btn-primary" onclick="exportPersonalization()" style="width: 100%;">📤 Télécharger Config</button>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                            <h4 style="color: #667eea; margin-bottom: 15px;">📥 Importer Configuration</h4>
+                            <p style="color: #666; margin-bottom: 15px;">Chargez une configuration depuis un fichier JSON.</p>
+                            <input type="file" id="configFileInput" accept=".json" style="width: 100%; margin-bottom: 10px;">
+                            <button class="btn btn-success" onclick="importPersonalization()" style="width: 100%;">📥 Charger Config</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guide d'utilisation -->
+            <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee; margin-top: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 15px;">📖 Guide d'utilisation</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h5 style="color: #28a745; margin-bottom: 10px;">🎯 Configuration Rapide</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;">1. Choisissez un template dans l'onglet Templates<br>2. Personnalisez le nom et les couleurs<br>3. Cliquez "Appliquer Instantanément"</p>
+                    </div>
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h5 style="color: #dc3545; margin-bottom: 10px;">🗑️ Retirer la Personnalisation</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Pour rendre l'application vierge :<br>Cliquez "Supprimer Personnalisation"<br>Confirmez 2 fois</p>
+                    </div>
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h5 style="color: #007bff; margin-bottom: 10px;">📤 Sauvegarder/Partager</h5>
+                        <p style="margin: 0; font-size: 0.9rem; color: #666;">Exportez votre configuration<br>Partagez le fichier JSON<br>Importez sur d'autres installations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ========================================
         // CONFIGURATION CLIENT - À PERSONNALISER
@@ -6306,6 +6486,8 @@ Ex: Produit A | 1500 | correction_positive"
                 initializeAdminModule();
             } else if (moduleId === 'formation') {
                 initializeFormationModule();
+            } else if (moduleId === 'personalization') {
+                initializePersonalizationModule();
             }
 
             // Mettre à jour la sidebar
@@ -25844,6 +26026,412 @@ Date [ESPACES] Client [ESPACES] Montant
                     showAlert('Erreur lors de la suppression du groupe', 'error');
                 }
             }
+        }
+
+        // ========================================
+        // FONCTIONS MODULE PERSONNALISATION
+        // ========================================
+        
+        function initializePersonalizationModule() {
+            console.log('🎨 Initialisation du module Personnalisation');
+            
+            // Charger la configuration existante
+            loadPersonalizationConfig();
+            
+            // Générer les templates
+            generateIndustryTemplates();
+            
+            // Initialiser la prévisualisation
+            previewPersonalization();
+        }
+        
+        function showPersonalizationTab(tabName) {
+            // Masquer tous les contenus
+            const contents = document.querySelectorAll('.personalization-content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+                content.classList.remove('active');
+            });
+            
+            // Masquer tous les onglets
+            const tabs = document.querySelectorAll('.personalization-tab');
+            tabs.forEach(tab => {
+                tab.style.background = '#f8f9fa';
+                tab.style.color = '#333';
+                tab.classList.remove('active');
+            });
+            
+            // Afficher le contenu sélectionné
+            const selectedContent = document.getElementById(`personalization-${tabName}`);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+                selectedContent.classList.add('active');
+            }
+            
+            // Activer l'onglet correspondant
+            const activeTab = document.querySelector(`[onclick="showPersonalizationTab('${tabName}')"]`);
+            if (activeTab) {
+                activeTab.style.background = '#667eea';
+                activeTab.style.color = 'white';
+                activeTab.classList.add('active');
+            }
+            
+            // Actions spécifiques par onglet
+            if (tabName === 'templates') {
+                generateIndustryTemplates();
+            } else if (tabName === 'preview') {
+                previewPersonalization();
+            }
+        }
+        
+        function loadPersonalizationConfig() {
+            const config = localStorage.getItem('iziperfPersonalizationConfig');
+            if (config) {
+                try {
+                    const parsedConfig = JSON.parse(config);
+                    
+                    // Charger les valeurs dans les champs
+                    if (parsedConfig.clientName) document.getElementById('clientName').value = parsedConfig.clientName;
+                    if (parsedConfig.clientIndustry) document.getElementById('clientIndustry').value = parsedConfig.clientIndustry;
+                    if (parsedConfig.clientCurrency) document.getElementById('clientCurrency').value = parsedConfig.clientCurrency;
+                    if (parsedConfig.clientLogo) document.getElementById('clientLogo').value = parsedConfig.clientLogo;
+                    if (parsedConfig.primaryColor) {
+                        document.getElementById('primaryColor').value = parsedConfig.primaryColor;
+                        document.getElementById('primaryColorText').value = parsedConfig.primaryColor;
+                    }
+                    if (parsedConfig.secondaryColor) {
+                        document.getElementById('secondaryColor').value = parsedConfig.secondaryColor;
+                        document.getElementById('secondaryColorText').value = parsedConfig.secondaryColor;
+                    }
+                    
+                    console.log('✅ Configuration personnalisation chargée');
+                } catch (error) {
+                    console.error('❌ Erreur lors du chargement de la configuration:', error);
+                }
+            }
+        }
+        
+        function savePersonalization() {
+            const config = {
+                clientName: document.getElementById('clientName').value,
+                clientIndustry: document.getElementById('clientIndustry').value,
+                clientCurrency: document.getElementById('clientCurrency').value,
+                clientLogo: document.getElementById('clientLogo').value,
+                primaryColor: document.getElementById('primaryColor').value,
+                secondaryColor: document.getElementById('secondaryColor').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('iziperfPersonalizationConfig', JSON.stringify(config));
+            showAlert('✅ Configuration sauvegardée avec succès', 'success');
+            console.log('💾 Configuration personnalisation sauvegardée:', config);
+        }
+        
+        function applyPersonalizationInstant() {
+            savePersonalization();
+            applyClientPersonalization();
+            showAlert('⚡ Personnalisation appliquée instantanément !', 'success');
+        }
+        
+        function resetToDefault() {
+            if (confirm('🔄 Voulez-vous réinitialiser aux paramètres par défaut IziPerf ?')) {
+                // Réinitialiser les champs
+                document.getElementById('clientName').value = 'IziPerf';
+                document.getElementById('clientIndustry').value = '';
+                document.getElementById('clientCurrency').value = 'FCFA';
+                document.getElementById('clientLogo').value = '';
+                document.getElementById('primaryColor').value = '#667eea';
+                document.getElementById('primaryColorText').value = '#667eea';
+                document.getElementById('secondaryColor').value = '#764ba2';
+                document.getElementById('secondaryColorText').value = '#764ba2';
+                
+                // Sauvegarder et appliquer
+                savePersonalization();
+                applyClientPersonalization();
+                previewPersonalization();
+                
+                showAlert('🔄 Application réinitialisée aux paramètres IziPerf par défaut', 'info');
+            }
+        }
+        
+        function removePersonalization() {
+            if (confirm('🗑️ Êtes-vous sûr de vouloir supprimer complètement la personnalisation ?')) {
+                if (confirm('⚠️ Cette action est irréversible. Continuer ?')) {
+                    localStorage.removeItem('iziperfPersonalizationConfig');
+                    localStorage.removeItem('CLIENT_CONFIG');
+                    
+                    // Réinitialiser les champs
+                    document.getElementById('clientName').value = '';
+                    document.getElementById('clientIndustry').value = '';
+                    document.getElementById('clientCurrency').value = 'FCFA';
+                    document.getElementById('clientLogo').value = '';
+                    document.getElementById('primaryColor').value = '#667eea';
+                    document.getElementById('primaryColorText').value = '#667eea';
+                    document.getElementById('secondaryColor').value = '#764ba2';
+                    document.getElementById('secondaryColorText').value = '#764ba2';
+                    
+                    // Appliquer les changements
+                    window.CLIENT_CONFIG = {};
+                    previewPersonalization();
+                    
+                    // Recharger la page pour appliquer les changements
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
+                    
+                    showAlert('🗑️ Personnalisation supprimée. Application vierge restaurée.', 'success');
+                }
+            }
+        }
+        
+        function previewPersonalization() {
+            const config = {
+                clientName: document.getElementById('clientName').value || 'IziPerf',
+                clientIndustry: document.getElementById('clientIndustry').value,
+                clientCurrency: document.getElementById('clientCurrency').value,
+                clientLogo: document.getElementById('clientLogo').value,
+                primaryColor: document.getElementById('primaryColor').value,
+                secondaryColor: document.getElementById('secondaryColor').value
+            };
+            
+            const previewDiv = document.getElementById('personalizationPreview');
+            if (!previewDiv) return;
+            
+            const logoHtml = config.clientLogo ? 
+                `<img src="${config.clientLogo}" alt="Logo" style="max-height: 40px; margin-right: 15px;" onerror="this.style.display='none'">` : 
+                '';
+            
+            previewDiv.innerHTML = `
+                <div style="background: linear-gradient(135deg, ${config.primaryColor || '#667eea'}, ${config.secondaryColor || '#764ba2'}); color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        ${logoHtml}
+                        <h2 style="margin: 0; font-size: 1.8rem;">${config.clientName}</h2>
+                    </div>
+                    <p style="margin: 0; opacity: 0.9;">${config.clientIndustry ? '🏢 ' + config.clientIndustry : '📊 Système de gestion'}</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div style="background: ${config.primaryColor || '#667eea'}; color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4 style="margin: 0 0 5px 0;">Ventes</h4>
+                        <p style="margin: 0; font-size: 1.2rem; font-weight: bold;">1,250,000 ${config.clientCurrency}</p>
+                    </div>
+                    <div style="background: ${config.secondaryColor || '#764ba2'}; color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4 style="margin: 0 0 5px 0;">Stocks</h4>
+                        <p style="margin: 0; font-size: 1.2rem; font-weight: bold;">85 produits</p>
+                    </div>
+                    <div style="background: linear-gradient(45deg, ${config.primaryColor || '#667eea'}, ${config.secondaryColor || '#764ba2'}); color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                        <h4 style="margin: 0 0 5px 0;">Bénéfices</h4>
+                        <p style="margin: 0; font-size: 1.2rem; font-weight: bold;">+15.8%</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${config.primaryColor || '#667eea'};">
+                    <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                        <strong>Aperçu:</strong> Voici comment votre application apparaîtra avec ces paramètres de personnalisation.
+                        ${config.clientIndustry ? ` Template ${config.clientIndustry} appliqué.` : ''}
+                    </p>
+                </div>
+            `;
+        }
+        
+        function syncColorInputs(type) {
+            const colorInput = document.getElementById(`${type}Color`);
+            const textInput = document.getElementById(`${type}ColorText`);
+            
+            if (type === 'primary') {
+                colorInput.value = textInput.value;
+            } else if (type === 'secondary') {
+                colorInput.value = textInput.value;
+            }
+            
+            previewPersonalization();
+        }
+        
+        function applyColorTheme(primary, secondary) {
+            document.getElementById('primaryColor').value = primary;
+            document.getElementById('primaryColorText').value = primary;
+            document.getElementById('secondaryColor').value = secondary;
+            document.getElementById('secondaryColorText').value = secondary;
+            previewPersonalization();
+        }
+        
+        function generateIndustryTemplates() {
+            const templatesContainer = document.querySelector('#personalization-templates > div');
+            if (!templatesContainer) return;
+            
+            const templates = [
+                {
+                    name: '🛍️ Commerce',
+                    industry: 'Commerce',
+                    primaryColor: '#27ae60',
+                    secondaryColor: '#229954',
+                    currency: 'FCFA',
+                    description: 'Parfait pour magasins, boutiques, supermarchés'
+                },
+                {
+                    name: '🍽️ Restauration',
+                    industry: 'Restauration',
+                    primaryColor: '#e74c3c',
+                    secondaryColor: '#c0392b',
+                    currency: 'FCFA',
+                    description: 'Idéal pour restaurants, cafés, traiteurs'
+                },
+                {
+                    name: '🏭 Production',
+                    industry: 'Production',
+                    primaryColor: '#f39c12',
+                    secondaryColor: '#e67e22',
+                    currency: 'FCFA',
+                    description: 'Adapté aux usines, ateliers, manufactures'
+                },
+                {
+                    name: '🔧 Services',
+                    industry: 'Services',
+                    primaryColor: '#9b59b6',
+                    secondaryColor: '#8e44ad',
+                    currency: 'FCFA',
+                    description: 'Pour sociétés de services, consultants'
+                },
+                {
+                    name: '📦 Distribution',
+                    industry: 'Distribution',
+                    primaryColor: '#34495e',
+                    secondaryColor: '#2c3e50',
+                    currency: 'FCFA',
+                    description: 'Grossistes, distributeurs, logistique'
+                },
+                {
+                    name: '🏥 Santé',
+                    industry: 'Santé',
+                    primaryColor: '#16a085',
+                    secondaryColor: '#1abc9c',
+                    currency: 'FCFA',
+                    description: 'Cliniques, pharmacies, centres médicaux'
+                }
+            ];
+            
+            templatesContainer.innerHTML = templates.map(template => `
+                <div style="background: white; border: 2px solid #eee; border-radius: 10px; padding: 20px; cursor: pointer; transition: all 0.3s;" onclick="applyTemplate('${template.industry}', '${template.primaryColor}', '${template.secondaryColor}', '${template.currency}')" onmouseover="this.style.borderColor='${template.primaryColor}'" onmouseout="this.style.borderColor='#eee'">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(45deg, ${template.primaryColor}, ${template.secondaryColor}); border-radius: 50%; margin-right: 15px;"></div>
+                        <h4 style="margin: 0; color: ${template.primaryColor};">${template.name}</h4>
+                    </div>
+                    <p style="margin: 0; color: #666; font-size: 0.9rem;">${template.description}</p>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #999;">
+                        Devise: ${template.currency} • Couleurs: ${template.primaryColor}, ${template.secondaryColor}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function applyTemplate(industry, primaryColor, secondaryColor, currency) {
+            document.getElementById('clientIndustry').value = industry;
+            document.getElementById('primaryColor').value = primaryColor;
+            document.getElementById('primaryColorText').value = primaryColor;
+            document.getElementById('secondaryColor').value = secondaryColor;
+            document.getElementById('secondaryColorText').value = secondaryColor;
+            document.getElementById('clientCurrency').value = currency;
+            
+            previewPersonalization();
+            showAlert(`✅ Template ${industry} appliqué !`, 'success');
+        }
+        
+        function loadIndustryTemplate() {
+            const industry = document.getElementById('clientIndustry').value;
+            if (!industry) return;
+            
+            const templateColors = {
+                'Commerce': { primary: '#27ae60', secondary: '#229954' },
+                'Restauration': { primary: '#e74c3c', secondary: '#c0392b' },
+                'Production': { primary: '#f39c12', secondary: '#e67e22' },
+                'Services': { primary: '#9b59b6', secondary: '#8e44ad' },
+                'Distribution': { primary: '#34495e', secondary: '#2c3e50' },
+                'Santé': { primary: '#16a085', secondary: '#1abc9c' },
+                'Éducation': { primary: '#3498db', secondary: '#2980b9' },
+                'Finance': { primary: '#f1c40f', secondary: '#f39c12' }
+            };
+            
+            if (templateColors[industry]) {
+                const colors = templateColors[industry];
+                document.getElementById('primaryColor').value = colors.primary;
+                document.getElementById('primaryColorText').value = colors.primary;
+                document.getElementById('secondaryColor').value = colors.secondary;
+                document.getElementById('secondaryColorText').value = colors.secondary;
+                previewPersonalization();
+            }
+        }
+        
+        function exportPersonalization() {
+            const config = {
+                clientName: document.getElementById('clientName').value,
+                clientIndustry: document.getElementById('clientIndustry').value,
+                clientCurrency: document.getElementById('clientCurrency').value,
+                clientLogo: document.getElementById('clientLogo').value,
+                primaryColor: document.getElementById('primaryColor').value,
+                secondaryColor: document.getElementById('secondaryColor').value,
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+            
+            const dataStr = JSON.stringify(config, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = `iziperfsystem-config-${config.clientName || 'personnalisation'}-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            
+            showAlert('📤 Configuration exportée avec succès !', 'success');
+        }
+        
+        function importPersonalization() {
+            const fileInput = document.getElementById('configFileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showAlert('⚠️ Veuillez sélectionner un fichier de configuration', 'warning');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const config = JSON.parse(e.target.result);
+                    
+                    // Valider la structure du fichier
+                    if (!config.clientName && !config.primaryColor) {
+                        throw new Error('Fichier de configuration invalide');
+                    }
+                    
+                    // Charger les valeurs
+                    if (config.clientName) document.getElementById('clientName').value = config.clientName;
+                    if (config.clientIndustry) document.getElementById('clientIndustry').value = config.clientIndustry;
+                    if (config.clientCurrency) document.getElementById('clientCurrency').value = config.clientCurrency;
+                    if (config.clientLogo) document.getElementById('clientLogo').value = config.clientLogo;
+                    if (config.primaryColor) {
+                        document.getElementById('primaryColor').value = config.primaryColor;
+                        document.getElementById('primaryColorText').value = config.primaryColor;
+                    }
+                    if (config.secondaryColor) {
+                        document.getElementById('secondaryColor').value = config.secondaryColor;
+                        document.getElementById('secondaryColorText').value = config.secondaryColor;
+                    }
+                    
+                    // Mettre à jour la prévisualisation
+                    previewPersonalization();
+                    
+                    // Réinitialiser le champ fichier
+                    fileInput.value = '';
+                    
+                    showAlert('📥 Configuration importée avec succès !', 'success');
+                    
+                } catch (error) {
+                    console.error('Erreur lors de l\'import:', error);
+                    showAlert('❌ Erreur lors de l\'import du fichier de configuration', 'error');
+                }
+            };
+            
+            reader.readAsText(file);
         }
 
     </script>
