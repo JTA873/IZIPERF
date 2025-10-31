@@ -4758,34 +4758,11 @@
                             <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">📦 Interface Mouvements Stocks</h3>
                             
                             <!-- Formulaire Production -->
-                            
-                            <!-- TAB: Configuration -->
-                            <div id="personalization-config" class="personalization-content active">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                    <!-- Informations Entreprise -->
-                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
-                                        <h4 style="color: #667eea; margin-bottom: 15px;">🏢 Informations Entreprise</h4>
-                                        <div style="margin-bottom: 15px;">
-                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Nom de l'entreprise *</label>
-                                            <input type="text" id="clientName" placeholder="Ex: Boulangerie Martin" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
-                                        </div>
-                                        <div style="margin-bottom: 15px;">
-                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Secteur d'activité</label>
-                                            <select id="clientIndustry" onchange="loadIndustryTemplate(); previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
-                                                <option value="">-- Sélectionner --</option>
-                                                <option value="Commerce">🛍️ Commerce</option>
-                                                <option value="Restauration">🍽️ Restauration</option>
-                                                <option value="Services">🔧 Services</option>
-                                                <option value="Production">🏭 Production</option>
-                                                <option value="Distribution">📦 Distribution</option>
-                                                <option value="Santé">🏥 Santé</option>
-                                                <option value="Éducation">🎓 Éducation</option>
-                                                <option value="Finance">💰 Finance</option>
-                                                <option value="Autre">📋 Autre</option>
-                                            </select>
-                                        </div>
-                                        <div style="margin-bottom: 15px;">
-                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Devise</label>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 8px; font-weight: bold;">  Produit :</label>
+                                <select id="prodProduitSelect" onchange="handleProductSelection()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 10px; background: white; font-size: 14px;">
+                                    <option value="">🔍 Chargement des produits...</option>
+                                </select>
                                             <select id="clientCurrency" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
                                                 <option value="FCFA">FCFA</option>
                                                 <option value="EUR">EUR (€)</option>
