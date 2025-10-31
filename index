@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>📊 KAMLAC gestion client </title>
+    <meta name="description" content="IziPerf - Solution complète de gestion d'entreprise. Ventes, stocks, encaissements, clients et analyses.">
+    <meta name="keywords" content="gestion entreprise, ventes, stocks, encaissements, clients, analyses, business">
+    <meta name="author" content="IziPerf Solutions">
+    <title>📊 IziPerf - Gestion d'entreprise</title>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js></script>
 
     <!-- Firebase SDKs -->
@@ -1016,7 +1019,7 @@
         }
         
         .data-table th.sortable::after {
-            content: '↕️';
+            content: ↕️';
             position: absolute;
             right: 5px;
             top: 50%;
@@ -3308,7 +3311,7 @@
         <div class="sidebar-header">
             <h1>
                 <span>📊</span>
-                <span class="header-text">KAMLAC Food Industries</span>
+                <span class="header-text">IziPerf Business</span>
             </h1>
             <div class="version-info header-text">
                 <div>Dernière mise à jour: <span id="sidebarLastUpdate">--</span></div>
@@ -3427,7 +3430,7 @@
     <div class="dashboard-container">
         <!-- Ancien header et navigation masqués car maintenant dans la sidebar -->
         <div class="header" style="display: none;">
-            <h1>📊 KAMLAC Food Industries </h1>
+            <h1>📊 IziPerf Business </h1>
             <div class="last-update" id="lastUpdate">Dernière mise à jour: --</div>
             <div style="margin-top: 8px; font-size: clamp(0.7rem, 1.8vw, 0.8rem); color: var(--text-secondary);">
                 <span>Version: <strong id="appVersion">2.1.0</strong></span>
@@ -3890,7 +3893,7 @@
                     <div class="chat-header">
                         <span>🤖</span>
                         <div>
-                            <div style="font-size: 1.1rem;">Assistant IA KAMLAC</div>
+                            <div style="font-size: 1.1rem;">Assistant IA IziPerf</div>
                             <div style="font-size: 0.85rem; opacity: 0.9;">Analyses et calculs sur vos données</div>
                         </div>
                     </div>
@@ -3900,7 +3903,7 @@
                             <div class="chat-avatar ai">🤖</div>
                             <div class="chat-bubble ai">
                                 <strong>Bonjour ! 👋</strong><br><br>
-                                Je peux analyser vos données KAMLAC :<br><br>
+                                Je peux analyser vos données :<br><br>
                                 📊 <strong>Analyses</strong> : CA, top clients, produits<br>
                                 📈 <strong>Calculs</strong> : Moyennes, totaux, évolutions<br>
                                   <strong>Notes</strong> : Consultez vos notes avec "affiche mes notes"<br>
@@ -4555,7 +4558,7 @@
             <!-- Inventaire Section -->
             <div id="stock-inventory" class="section">
                 <div class="card">
-                    <h2 style="margin-bottom: 20px; font-size: clamp(1.2rem, 4vw, 1.5rem);">� Tableau de Bord Stocks</h2>
+                    <h2 style="margin-bottom: 20px; font-size: clamp(1.2rem, 4vw, 1.5rem);">  Tableau de Bord Stocks</h2>
                     
                     <!-- KPI Summary -->
                     <div class="stats-row" style="margin-bottom: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
@@ -4595,7 +4598,7 @@
                                 </select>
                             </div>
                             <div class="filter-group">
-                                <label for="stockSortFilter" style="font-weight: 600; color: #495057;">� Trier par</label>
+                                <label for="stockSortFilter" style="font-weight: 600; color: #495057;">  Trier par</label>
                                 <select id="stockSortFilter" onchange="applyStockFilters()" style="width: 100%; padding: 8px 12px; border: 1px solid #ced4da; border-radius: 5px;">
                                     <option value="quantity_asc">Stock Croissant</option>
                                     <option value="quantity_desc">Stock Décroissant</option>
@@ -4699,7 +4702,7 @@
 
                     <!-- Export et Gestion -->
                     <div class="invoice-section">
-                        <h3 style="margin-bottom: 15px; color: #667eea;">� Export des Données Stocks</h3>
+                        <h3 style="margin-bottom: 15px; color: #667eea;">  Export des Données Stocks</h3>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label>Export Mouvements Excel</label>
@@ -4741,6 +4744,149 @@
                     
                     <div id="adminContent" style="display: none;">
                         <div style="color: lightgreen; margin: 20px;">✅ Accès autorisé</div>
+                        
+                        <!-- 🎨 GESTIONNAIRE DE PERSONNALISATION AVANCÉ -->
+                        <div style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 2px solid #667eea; padding: 30px; border-radius: 15px; margin: 20px 0; text-align: left;">
+                            <h3 style="color: #667eea; margin-bottom: 25px; text-align: center; font-size: 1.4rem;">🎨 Gestionnaire de Personnalisation Client</h3>
+                            
+                            <!-- Tabs Navigation -->
+                            <div style="display: flex; margin-bottom: 25px; border-bottom: 2px solid #eee;">
+                                <button class="personalization-tab active" onclick="showPersonalizationTab('config')" style="flex: 1; padding: 12px; border: none; background: #667eea; color: white; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px;">
+                                    ⚙️ Configuration
+                                </button>
+                                <button class="personalization-tab" onclick="showPersonalizationTab('preview')" style="flex: 1; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px;">
+                                    👁️ Prévisualisation
+                                </button>
+                                <button class="personalization-tab" onclick="showPersonalizationTab('templates')" style="flex: 1; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0; margin-right: 2px;">
+                                    📋 Templates
+                                </button>
+                                <button class="personalization-tab" onclick="showPersonalizationTab('export')" style="flex: 1; padding: 12px; border: none; background: #f8f9fa; color: #333; cursor: pointer; border-radius: 8px 8px 0 0;">
+                                    📤 Export/Import
+                                </button>
+                            </div>
+                            
+                            <!-- TAB: Configuration -->
+                            <div id="personalization-config" class="personalization-content active">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <!-- Informations Entreprise -->
+                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                                        <h4 style="color: #667eea; margin-bottom: 15px;">🏢 Informations Entreprise</h4>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Nom de l'entreprise *</label>
+                                            <input type="text" id="clientName" placeholder="Ex: Boulangerie Martin" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 14px;">
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Secteur d'activité</label>
+                                            <select id="clientIndustry" onchange="loadIndustryTemplate(); previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                                                <option value="">-- Sélectionner --</option>
+                                                <option value="Commerce">🛍️ Commerce</option>
+                                                <option value="Restauration">🍽️ Restauration</option>
+                                                <option value="Services">🔧 Services</option>
+                                                <option value="Production">🏭 Production</option>
+                                                <option value="Distribution">📦 Distribution</option>
+                                                <option value="Santé">🏥 Santé</option>
+                                                <option value="Éducation">🎓 Éducation</option>
+                                                <option value="Finance">💰 Finance</option>
+                                                <option value="Autre">📋 Autre</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Devise</label>
+                                            <select id="clientCurrency" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                                                <option value="FCFA">FCFA</option>
+                                                <option value="EUR">EUR (€)</option>
+                                                <option value="USD">USD ($)</option>
+                                                <option value="XOF">XOF</option>
+                                                <option value="MAD">MAD (DH)</option>
+                                                <option value="XAF">XAF</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Logo URL (optionnel)</label>
+                                            <input type="url" id="clientLogo" placeholder="https://monsite.com/logo.png" onchange="previewPersonalization()" style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Thème Visuel -->
+                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                                        <h4 style="color: #667eea; margin-bottom: 15px;">🎨 Thème Visuel</h4>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Couleur principale</label>
+                                            <div style="display: flex; gap: 10px; align-items: center;">
+                                                <input type="color" id="primaryColor" value="#667eea" onchange="previewPersonalization()" style="width: 60px; height: 40px; border: 2px solid #ddd; border-radius: 6px; cursor: pointer;">
+                                                <input type="text" id="primaryColorText" value="#667eea" onchange="syncColorInputs('primary')" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;">
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #555;">Couleur secondaire</label>
+                                            <div style="display: flex; gap: 10px; align-items: center;">
+                                                <input type="color" id="secondaryColor" value="#764ba2" onchange="previewPersonalization()" style="width: 60px; height: 40px; border: 2px solid #ddd; border-radius: 6px; cursor: pointer;">
+                                                <input type="text" id="secondaryColorText" value="#764ba2" onchange="syncColorInputs('secondary')" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Couleurs prédéfinies -->
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Thèmes prédéfinis</label>
+                                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                                                <button onclick="applyColorTheme('#667eea', '#764ba2')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #667eea, #764ba2); cursor: pointer;" title="Bleu IziPerf"></button>
+                                                <button onclick="applyColorTheme('#e74c3c', '#c0392b')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #e74c3c, #c0392b); cursor: pointer;" title="Rouge Restaurant"></button>
+                                                <button onclick="applyColorTheme('#27ae60', '#229954')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #27ae60, #229954); cursor: pointer;" title="Vert Commerce"></button>
+                                                <button onclick="applyColorTheme('#f39c12', '#e67e22')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #f39c12, #e67e22); cursor: pointer;" title="Orange Production"></button>
+                                                <button onclick="applyColorTheme('#9b59b6', '#8e44ad')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #9b59b6, #8e44ad); cursor: pointer;" title="Violet Services"></button>
+                                                <button onclick="applyColorTheme('#34495e', '#2c3e50')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #34495e, #2c3e50); cursor: pointer;" title="Gris Corporate"></button>
+                                                <button onclick="applyColorTheme('#16a085', '#1abc9c')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #16a085, #1abc9c); cursor: pointer;" title="Turquoise Santé"></button>
+                                                <button onclick="applyColorTheme('#2980b9', '#3498db')" style="height: 30px; border: 2px solid #ddd; border-radius: 6px; background: linear-gradient(45deg, #2980b9, #3498db); cursor: pointer;" title="Bleu Ciel"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Actions -->
+                                <div style="display: flex; gap: 15px; margin-top: 25px; justify-content: center; flex-wrap: wrap;">
+                                    <button class="btn btn-success" onclick="savePersonalization()" style="padding: 12px 25px; font-weight: bold;">💾 Sauvegarder Configuration</button>
+                                    <button class="btn btn-primary" onclick="applyPersonalizationInstant()" style="padding: 12px 25px; font-weight: bold;">⚡ Appliquer Instantanément</button>
+                                    <button class="btn btn-warning" onclick="resetToDefault()" style="padding: 12px 25px; font-weight: bold;">🔄 Réinitialiser IziPerf</button>
+                                    <button class="btn btn-danger" onclick="removePersonalization()" style="padding: 12px 25px; font-weight: bold;">🗑️ Supprimer Personnalisation</button>
+                                </div>
+                            </div>
+                            
+                            <!-- TAB: Prévisualisation -->
+                            <div id="personalization-preview" class="personalization-content" style="display: none;">
+                                <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                                    <h4 style="color: #667eea; margin-bottom: 15px;">👁️ Aperçu de la Personnalisation</h4>
+                                    <div id="personalizationPreview" style="border: 2px solid #ddd; border-radius: 10px; padding: 20px; min-height: 200px; background: #f8f9fa;">
+                                        <div style="text-align: center; color: #666; padding: 40px;">
+                                            Sélectionnez des options dans l'onglet Configuration pour voir l'aperçu
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- TAB: Templates -->
+                            <div id="personalization-templates" class="personalization-content" style="display: none;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                                    <!-- Template cards will be dynamically generated -->
+                                </div>
+                            </div>
+                            
+                            <!-- TAB: Export/Import -->
+                            <div id="personalization-export" class="personalization-content" style="display: none;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                                        <h4 style="color: #667eea; margin-bottom: 15px;">📤 Exporter Configuration</h4>
+                                        <p style="color: #666; margin-bottom: 15px;">Sauvegardez la configuration actuelle dans un fichier JSON.</p>
+                                        <button class="btn btn-primary" onclick="exportPersonalization()" style="width: 100%;">� Télécharger Config</button>
+                                    </div>
+                                    <div style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee;">
+                                        <h4 style="color: #667eea; margin-b: 15px;">📥 Importer Configuration</h4>
+                                        <p style="color: #666; margin-bottom: 15px;">Chargez une configuration depuis un fichier JSON.</p>
+                                        <input type="file" id="configFileInput" accept=".json" style="width: 100%; margin-bottom: 10px;">
+                                        <button class="btn btn-success" onclick="importPersonalization()" style="width: 100%;">📥 Charger Config</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- Interface Gestion Production -->
                         <div style="background: rgba(255,255,255,0.95); color: #333; padding: 30px; border-radius: 4px; margin: 20px 0; text-align: left;">
@@ -4959,7 +5105,7 @@
                                     <label>Import en Masse - Corrections de Stock</label>
                                     <textarea id="stockImportData" placeholder="Coller ici les données de correction de stock au format:
 Produit | Quantité | Type
-Ex: LEP JANUS 18g x 100 | 1500 | correction_positive" 
+Ex: Produit A | 1500 | correction_positive" 
                                         style="width: 100%; height: 120px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: monospace; font-size: 12px; resize: vertical;"></textarea>
                                     <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
                                         <button class="btn btn-success" onclick="validateStockImport()">✅ Valider Import</button>
@@ -5022,6 +5168,15 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                                     <div id="debugAllResults" style="font-family: monospace; font-size: 12px; max-height: 300px; overflow-y: auto; text-align: left;"></div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Section Données de Démonstration -->
+                        <div style="background: rgba(0,255,0,0.1); border: 2px solid #28a745; padding: 20px; border-radius: 15px; margin: 20px 0; text-align: center;">
+                            <h4 style="color: #28a745; margin-bottom: 15px;">🎯 Template de Démonstration</h4>
+                            <p style="margin-bottom: 15px; color: #28a745;">Générer un jeu de données de démonstration générique pour présenter l'application</p>
+                            <button class="btn btn-success" onclick="createDemoData()" style="background: #28a745; margin: 5px;">
+                                🎯 Créer Données Démo
+                            </button>
                         </div>
                         
                         <button onclick="lockAdmin()" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 10px 20px; border-radius: 20px; cursor: pointer;">🔒 Verrouiller</button>
@@ -5343,7 +5498,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
         <!-- Section Guide Rapide -->
         <div id="formation-guide-rapide" class="formation-section active">
             <div class="formation-hero">
-                <h1>🚀 Bienvenue dans KAMLAC</h1>
+                <h1>🚀 Bienvenue dans IziPerf</h1>
                 <p class="formation-subtitle">Maîtrisez votre application en 4 étapes simples</p>
             </div>
 
@@ -5572,7 +5727,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
         <div id="formation-interface" class="formation-section">
             <div class="formation-header">
                 <h2>📱 Comprendre l'Interface</h2>
-                <p>Naviguez comme un pro dans KAMLAC</p>
+                <p>Naviguez comme un pro dans IziPerf</p>
             </div>
 
             <div class="formation-tips-grid">
@@ -5663,6 +5818,39 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
     </div>
 
     <script>
+        // ========================================
+        // CONFIGURATION CLIENT - À PERSONNALISER
+        // ========================================
+        const CLIENT_CONFIG = {
+            name: "Mon Entreprise",
+            industry: "Commerce",
+            logo: "",
+            primaryColor: "#667eea",
+            secondaryColor: "#764ba2",
+            currency: "FCFA",
+            dateFormat: "DD/MM/YYYY"
+        };
+
+        // ========================================
+        // FONCTION D'APPLICATION DU THÈME
+        // ========================================
+        function applyClientTheme() {
+            const root = document.documentElement;
+            root.style.setProperty('--accent-color', CLIENT_CONFIG.primaryColor);
+            root.style.setProperty('--accent-hover', CLIENT_CONFIG.secondaryColor);
+            
+            // Mise à jour du nom de l'entreprise dans l'interface
+            const headerElements = document.querySelectorAll('.header-text');
+            headerElements.forEach(el => {
+                if (el.textContent.includes('IziPerf Business')) {
+                    el.textContent = CLIENT_CONFIG.name;
+                }
+            });
+            
+            // Mise à jour du titre de la page
+            document.title = `📊 ${CLIENT_CONFIG.name} - Gestion d'entreprise`;
+        }
+
         // Variables globales
         let salesData = [];
         let paymentsData = [];
@@ -5763,7 +5951,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                 }
                 
             } else if (type === 'exits') {
-                console.log(`� Avant nettoyage:`);
+                console.log(`  Avant nettoyage:`);
                 console.log(`   stockExitsData: ${stockExitsData.length} éléments`);
                 console.log(`   localStorage stockExits: ${(JSON.parse(localStorage.getItem('stockExits') || '[]')).length} éléments`);
                 
@@ -5792,7 +5980,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
             console.groupEnd();
         }
         
-        // � FONCTION RECHARGEMENT FIREBASE UNIQUEMENT 🔥
+        //   FONCTION RECHARGEMENT FIREBASE UNIQUEMENT 🔥
         async function reloadFromFirebaseOnly() {
             console.group(`🔥 RECHARGEMENT FIREBASE UNIQUEMENT`);
             
@@ -7432,7 +7620,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
             
             if (!confirm('⚠️ Êtes-vous sûr de vouloir supprimer ce mouvement ?')) return;
             
-            console.log(`�️ Suppression mouvement: ${source}/${id}`);
+            console.log(` ️ Suppression mouvement: ${source}/${id}`);
             
             // ✅ BLOQUER les listeners Firebase pendant la suppression
             deletionInProgress = true;
@@ -7451,14 +7639,14 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                     try {
                         // CORRECTION: Utiliser where() au lieu de doc()
                         const idStr = id.toString();
-                        console.log(`�️ Suppression Firebase entrée ID: ${idStr}`);
+                        console.log(` ️ Suppression Firebase entrée ID: ${idStr}`);
                         
                         const snapshot = await db.collection('stockEntries').where('id', '==', idStr).get();
                         
                         if (!snapshot.empty) {
                             const promises = [];
                             snapshot.forEach(doc => {
-                                console.log(`� Suppression document Firebase ID: ${doc.id} pour entrée ID: ${idStr}`);
+                                console.log(`  Suppression document Firebase ID: ${doc.id} pour entrée ID: ${idStr}`);
                                 promises.push(doc.ref.delete());
                             });
                             
@@ -7506,7 +7694,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                     try {
                         // CORRECTION: Utiliser where() au lieu de doc()
                         const idStr = id.toString();
-                        console.log(`�️ Suppression Firebase sortie ID: ${idStr}`);
+                        console.log(` ️ Suppression Firebase sortie ID: ${idStr}`);
                         
                         const snapshot = await db.collection('stockExits').where('id', '==', idStr).get();
                         
@@ -7563,7 +7751,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
         async function deleteStockEntry(id) {
             if (!confirm('⚠️ Êtes-vous sûr de vouloir supprimer cette entrée ?')) return;
             
-            console.log(`�️ Suppression entrée: ${id}`);
+            console.log(` ️ Suppression entrée: ${id}`);
             
             // ✅ BLOQUER les listeners Firebase pendant la suppression
             deletionInProgress = true;
@@ -7695,7 +7883,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                         
                         allDocs.forEach(doc => {
                             const data = doc.data();
-                            console.log(`� Doc: ${doc.id} → ID: ${data.id} (type: ${typeof data.id})`);
+                            console.log(`  Doc: ${doc.id} → ID: ${data.id} (type: ${typeof data.id})`);
                             
                             // Comparaison flexible pour gérer les différents types
                             if (data.id == id || data.id === idStr || data.id == idStr) {
@@ -8071,11 +8259,11 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
                     <button onclick="showProductMovements('${productName.replace(/'/g, "\\'")}', this.closest('.modal-overlay'))" 
                             style="background: #17a2b8; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">
-                        � Voir Mouvements
+                          Voir Mouvements
                     </button>
                     <button onclick="exportProductData('${productName.replace(/'/g, "\\'")}', this.closest('.modal-overlay'))" 
                             style="background: #667eea; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">
-                        � Exporter Données
+                          Exporter Données
                     </button>
                     <button onclick="navigateToProductEdit('${productName.replace(/'/g, "\\'")}'); this.closest('.modal-overlay').remove();" 
                             style="background: #28a745; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer;">
@@ -9077,7 +9265,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                     const report = generateStockAnalysisReport();
                     
                     const message = `
-        📊 ANALYSE DES STOCKS KAMLAC
+        📊 ANALYSE DES STOCKS ${CLIENT_CONFIG.name}
         ════════════════════════════
         
         📈 ${report.totalSales} ventes analysées
@@ -11188,7 +11376,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
         function prepareStockData() {
             // FILTRER SEULEMENT LES PRODUITS ACTIFS (qui existent dans productsData)
             const activeProductNames = new Set(productsData.map(p => p.reference));
-            console.log(`� Produits actifs référencés: ${activeProductNames.size}`);
+            console.log(`  Produits actifs référencés: ${activeProductNames.size}`);
             
             // Filtrer currentStockLevels pour ne garder que les produits actifs
             const activeStockEntries = Object.keys(currentStockLevels)
@@ -12508,7 +12696,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                 {
                     date: '26/08/2025',
                     type: 'Sortie (Vente)',
-                    product: 'CAFE STICK REFRAISH 1.5gx150x9',
+                    product: 'Produit Test A',
                     quantity: 100,
                     unit: 'Cartons',
                     unitCost: 26000,
@@ -12518,7 +12706,7 @@ Ex: LEP JANUS 18g x 100 | 1500 | correction_positive"
                 {
                     date: '25/08/2025',
                     type: 'Entrée',
-                    product: 'CAFE POT REFRAISHH 200g x 12',
+                    product: 'Produit Test B',
                     quantity: 500,
                     unit: 'Cartons',
                     unitCost: 15000,
@@ -12873,9 +13061,9 @@ Produit | Quantité | Type
 • sortie : Sortie normale de stock
 
 📝 EXEMPLES :
-LEP JANUS 18g x 100 | 1500 | correction_positive
-CAFE POT REFRAISH 200g x 12 | 250 | entree
-LEP MEADOW CUP 28/24 25kg | 100 | sortie
+Produit A | 1500 | correction_positive
+Produit B 200g x 12 | 250 | entree
+Produit C 25kg | 100 | sortie
 
 💡 RÈGLES :
 • Format: Produit | Quantité | Type
@@ -13049,13 +13237,13 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
         
         // Configuration Firebase
         const firebaseConfig = {
-            apiKey: "AIzaSyBuR-B_bOyMtN1xnSQCCsxfJWydzg9mvs8Q",
-            authDomain: "kamlac-dashboard.firebaseapp.com",
-            projectId: "kamlac-dashboard",
-            storageBucket: "kamlac-dashboard.appspot.com",
-            messagingSenderId: "220610836736",
-            appId: "1:220610836736:web:1d1cee05aef8066a725be5",
-            measurementId: "G-Q8DKW4YL0L"
+            apiKey: "AIzaSyCIUdJQtk6QmL7j3uaholIT4W70wJH3v6Y",
+            authDomain: "iziperfapp.firebaseapp.com",
+            projectId: "iziperfapp",
+            storageBucket: "iziperfapp.firebasestorage.app",
+            messagingSenderId: "393189062429",
+            appId: "1:393189062429:web:80515845dd202897e953f4",
+            measurementId: "G-L9ZTC5NSSL"
         };
 
         // Fonction pour initialiser le tri avec délai pour s'assurer que les tables sont bien chargées
@@ -13387,6 +13575,9 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
             setTodayForNewInvoice();
             updateClientsSummaryTable();
             
+            // Appliquer la configuration client
+            applyClientConfigOnLoad();
+            
             // Initialiser Chart.js
             initializeChartJS();
             
@@ -13416,13 +13607,13 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
         }
 
         function loadFromLocalStorage() {
-            salesData = JSON.parse(localStorage.getItem('kamlacSalesData') || '[]');
-            paymentsData = JSON.parse(localStorage.getItem('kamlacPaymentsData') || '[]');
-            productsData = JSON.parse(localStorage.getItem('kamlacProductsData') || '[]');
-            aiNotes = JSON.parse(localStorage.getItem('kamlacAiNotes') || '[]');
-            noteCategories = JSON.parse(localStorage.getItem('kamlacNoteCategories') || '[]');
-            stockEntries = JSON.parse(localStorage.getItem('stockEntries') || '[]');
-            stockExits = JSON.parse(localStorage.getItem('kamlacStockExits') || '[]');
+            salesData = JSON.parse(localStorage.getItem('iziperfSalesData') || '[]');
+            paymentsData = JSON.parse(localStorage.getItem('iziperfPaymentsData') || '[]');
+            productsData = JSON.parse(localStorage.getItem('iziperfProductsData') || '[]');
+            aiNotes = JSON.parse(localStorage.getItem('iziperfAiNotes') || '[]');
+            noteCategories = JSON.parse(localStorage.getItem('iziperfNoteCategories') || '[]');
+            stockEntries = JSON.parse(localStorage.getItem('iziperfStockEntries') || '[]');
+            stockExits = JSON.parse(localStorage.getItem('iziperfStockExits') || '[]');
             
             console.log(`📦 Produits chargés depuis localStorage: ${productsData.length}`);
             
@@ -13508,13 +13699,13 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
         }
 
         function saveToLocalStorage() {
-            localStorage.setItem('kamlacSalesData', JSON.stringify(salesData));
-            localStorage.setItem('kamlacPaymentsData', JSON.stringify(paymentsData));
-            localStorage.setItem('kamlacProductsData', JSON.stringify(productsData));
-            localStorage.setItem('kamlacAiNotes', JSON.stringify(aiNotes));
-            localStorage.setItem('kamlacNoteCategories', JSON.stringify(noteCategories));
-            localStorage.setItem('stockEntries', JSON.stringify(stockEntriesData));
-            localStorage.setItem('stockExits', JSON.stringify(stockExitsData));
+            localStorage.setItem('iziperfSalesData', JSON.stringify(salesData));
+            localStorage.setItem('iziperfPaymentsData', JSON.stringify(paymentsData));
+            localStorage.setItem('iziperfProductsData', JSON.stringify(productsData));
+            localStorage.setItem('iziperfAiNotes', JSON.stringify(aiNotes));
+            localStorage.setItem('iziperfNoteCategories', JSON.stringify(noteCategories));
+            localStorage.setItem('iziperfStockEntries', JSON.stringify(stockEntriesData));
+            localStorage.setItem('iziperfStockExits', JSON.stringify(stockExitsData));
         }
 
         // Fonction pour charger l'inventaire depuis Firebase
@@ -13838,7 +14029,7 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
                     throw new Error('Firebase non initialisé');
                 }
                 
-                updateStep('✅ Firebase connecté', '� Connexion Firebase vérifiée');
+                updateStep('✅ Firebase connecté', '  Connexion Firebase vérifiée');
                 updateStep('🎉 DEBUGALL TERMINÉ AVEC SUCCÈS', 'Test simplifié réussi');
                 
                 console.log('🎉 === DEBUGALL TERMINÉ AVEC SUCCÈS ===');
@@ -16077,7 +16268,7 @@ LEP MEADOW CUP 28/24 25kg | 100 | sortie
 
         function generateHelpMessage() {
             return `🤖 <strong>Comment puis-je vous aider ?</strong><br><br>
-            Je peux analyser vos données KAMLAC et répondre à différents types de questions :<br><br>
+            Je peux analyser vos données et répondre à différents types de questions :<br><br>
             
             💰 <strong>Questions financières :</strong><br>
             • "Quel est mon CA total ?"<br>
@@ -20621,7 +20812,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 XLSX.utils.book_append_sheet(wb, ws, 'Ventes');
                 
                 // Télécharger le fichier
-                const filename = `KAMLAC_Ventes_${new Date().toISOString().split('T')[0]}.xlsx`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_Ventes_${new Date().toISOString().split('T')[0]}.xlsx`;
                 XLSX.writeFile(wb, filename);
                 
                 showAlert('📊 Export ventes Excel terminé', 'success');
@@ -20656,7 +20847,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 XLSX.utils.book_append_sheet(wb, ws, 'Encaissements');
                 
                 // Télécharger le fichier
-                const filename = `KAMLAC_Encaissements_${new Date().toISOString().split('T')[0]}.xlsx`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_Encaissements_${new Date().toISOString().split('T')[0]}.xlsx`;
                 XLSX.writeFile(wb, filename);
                 
                 showAlert('💰 Export encaissements Excel terminé', 'success');
@@ -20747,7 +20938,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 XLSX.utils.book_append_sheet(wb, ws3, 'Encaissements');
                 
                 // Télécharger le fichier
-                const filename = `KAMLAC_Export_${new Date().toISOString().split('T')[0]}.xlsx`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_Export_${new Date().toISOString().split('T')[0]}.xlsx`;
                 XLSX.writeFile(wb, filename);
                 
                 showAlert('📈 Export Excel terminé avec succès !', 'success');
@@ -20849,7 +21040,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 // Nom du fichier avec date
                 const now = new Date();
                 const dateStr = now.toLocaleDateString('fr-FR').replace(/\//g, '-');
-                const filename = `KAMLAC_Mouvements_Stocks_${dateStr}.xlsx`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_Mouvements_Stocks_${dateStr}.xlsx`;
                 
                 // Télécharger le fichier
                 XLSX.writeFile(wb, filename);
@@ -20931,7 +21122,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 // Nom du fichier avec date
                 const now = new Date();
                 const dateStr = now.toLocaleDateString('fr-FR').replace(/\//g, '-');
-                const filename = `KAMLAC_Inventaire_${dateStr}.xlsx`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_Inventaire_${dateStr}.xlsx`;
                 
                 // Télécharger le fichier
                 XLSX.writeFile(wb, filename);
@@ -20975,7 +21166,7 @@ Date [ESPACES] Client [ESPACES] Montant
                 
                 // === PAGE 1: TABLEAU RÉCAPITULATIF ===
                 doc.setFontSize(18);
-                doc.text('📊 KAMLAC - En-cours Clients', 20, 20);
+                doc.text(`📊 ${CLIENT_CONFIG.name} - En-cours Clients`, 20, 20);
                 
                 doc.setFontSize(10);
                 doc.text(`Généré le ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR')}`, 20, 30);
@@ -21115,11 +21306,11 @@ Date [ESPACES] Client [ESPACES] Montant
                 for (let i = 1; i <= pageCount; i++) {
                     doc.setPage(i);
                     doc.setFontSize(8);
-                    doc.text(`KAMLAC - Page ${i}/${pageCount}`, doc.internal.pageSize.width - 50, doc.internal.pageSize.height - 10);
+                    doc.text(`${CLIENT_CONFIG.name} - Page ${i}/${pageCount}`, doc.internal.pageSize.width - 50, doc.internal.pageSize.height - 10);
                 }
                 
                 // Télécharger
-                const filename = `KAMLAC_En-cours_${new Date().toISOString().split('T')[0]}.pdf`;
+                const filename = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_En-cours_${new Date().toISOString().split('T')[0]}.pdf`;
                 doc.save(filename);
                 
                 showAlert('📄 Export PDF des en-cours terminé !', 'success');
@@ -22147,7 +22338,7 @@ Date [ESPACES] Client [ESPACES] Montant
 
         // Message d'aide simplifié
         function generateSimpleHelpMessage() {
-            return `🤖 <strong>Assistant IA KAMLAC</strong><br><br>
+            return `🤖 <strong>Assistant IA IziPerf</strong><br><br>
             
             📊 <strong>Analyses disponibles :</strong><br>
             • "Quel est mon CA total ?"<br>
@@ -22430,6 +22621,464 @@ Date [ESPACES] Client [ESPACES] Montant
             document.getElementById('adminContent').style.display = 'none';
             document.getElementById('adminPinError').style.display = 'none';
             document.getElementById('adminPinInput').value = '';
+        }
+        
+        // ========================================
+        // GESTIONNAIRE DE PERSONNALISATION AVANCÉ
+        // ========================================
+        
+        function showPersonalizationTab(tabName) {
+            // Masquer tous les contenus
+            document.querySelectorAll('.personalization-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Masquer tous les tabs
+            document.querySelectorAll('.personalization-tab').forEach(tab => {
+                tab.style.background = '#f8f9fa';
+                tab.style.color = '#333';
+            });
+            
+            // Afficher le contenu sélectionné
+            const selectedContent = document.getElementById(`personalization-${tabName}`);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+            
+            // Activer le tab sélectionné
+            event.target.style.background = '#667eea';
+            event.target.style.color = 'white';
+            
+            // Actions spécifiques par tab
+            if (tabName === 'templates') {
+                generateTemplateCards();
+            } else if (tabName === 'preview') {
+                previewPersonalization();
+            }
+        }
+        
+        function syncColorInputs(type) {
+            if (type === 'primary') {
+                const textValue = document.getElementById('primaryColorText').value;
+                document.getElementById('primaryColor').value = textValue;
+            } else if (type === 'secondary') {
+                const textValue = document.getElementById('secondaryColorText').value;
+                document.getElementById('secondaryColor').value = textValue;
+            }
+            previewPersonalization();
+        }
+        
+        function applyColorTheme(primary, secondary) {
+            document.getElementById('primaryColor').value = primary;
+            document.getElementById('secondaryColor').value = secondary;
+            document.getElementById('primaryColorText').value = primary;
+            document.getElementById('secondaryColorText').value = secondary;
+            previewPersonalization();
+        }
+        
+        function previewPersonalization() {
+            const preview = document.getElementById('personalizationPreview');
+            if (!preview) return;
+            
+            const name = document.getElementById('clientName').value || 'Mon Entreprise';
+            const industry = document.getElementById('clientIndustry').value || 'Commerce';
+            const primary = document.getElementById('primaryColor').value;
+            const secondary = document.getElementById('secondaryColor').value;
+            const currency = document.getElementById('clientCurrency').value;
+            const logo = document.getElementById('clientLogo').value;
+            
+            preview.innerHTML = `
+                <div style="background: linear-gradient(45deg, ${primary}, ${secondary}); color: white; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        ${logo ? `<img src="${logo}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'">` : ''}
+                        <div>
+                            <h2 style="margin: 0; font-size: 1.5rem;">${name}</h2>
+                            <p style="margin: 5px 0 0 0; opacity: 0.9;">${industry}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: ${primary}20; border: 2px solid ${primary}; padding: 15px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.2rem; font-weight: bold; color: ${primary};">25,000 ${currency}</div>
+                        <div style="color: #666; font-size: 0.9rem;">Chiffre d'Affaires</div>
+                    </div>
+                    <div style="background: ${secondary}20; border: 2px solid ${secondary}; padding: 15px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.2rem; font-weight: bold; color: ${secondary};">156</div>
+                        <div style="color: #666; font-size: 0.9rem;">Ventes</div>
+                    </div>
+                    <div style="background: linear-gradient(45deg, ${primary}20, ${secondary}20); border: 2px solid ${primary}; padding: 15px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 1.2rem; font-weight: bold; color: ${primary};">42</div>
+                        <div style="color: #666; font-size: 0.9rem;">Clients</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <button style="background: ${primary}; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Action Principale</button>
+                    <button style="background: transparent; color: ${primary}; border: 2px solid ${primary}; padding: 10px 20px; border-radius: 6px; cursor: pointer;">Action Secondaire</button>
+                </div>
+            `;
+        }
+        
+        function savePersonalization() {
+            const config = {
+                name: document.getElementById('clientName').value || "Mon Entreprise",
+                industry: document.getElementById('clientIndustry').value || "Commerce",
+                primaryColor: document.getElementById('primaryColor').value,
+                secondaryColor: document.getElementById('secondaryColor').value,
+                currency: document.getElementById('clientCurrency').value,
+                logo: document.getElementById('clientLogo').value,
+                dateConfigured: new Date().toISOString()
+            };
+            
+            // Mettre à jour CLIENT_CONFIG
+            Object.assign(CLIENT_CONFIG, config);
+            
+            // Sauvegarder dans localStorage
+            localStorage.setItem('iziperfClientConfig', JSON.stringify(CLIENT_CONFIG));
+            
+            showAlert(`💾 Configuration "${config.name}" sauvegardée avec succès !`, 'success');
+            console.log('Configuration sauvegardée:', CLIENT_CONFIG);
+        }
+        
+        function applyPersonalizationInstant() {
+            savePersonalization();
+            applyClientTheme();
+            showAlert('⚡ Personnalisation appliquée instantanément !', 'success');
+        }
+        
+        function resetToDefault() {
+            if (confirm('🔄 Réinitialiser IziPerf à sa configuration par défaut ?')) {
+                // Réinitialiser aux valeurs par défaut d'IziPerf
+                CLIENT_CONFIG.name = "IziPerf Business";
+                CLIENT_CONFIG.industry = "Commerce";
+                CLIENT_CONFIG.primaryColor = "#667eea";
+                CLIENT_CONFIG.secondaryColor = "#764ba2";
+                CLIENT_CONFIG.currency = "FCFA";
+                CLIENT_CONFIG.logo = "";
+                
+                // Mettre à jour les inputs
+                loadPersonalizationInputs();
+                
+                // Sauvegarder et appliquer
+                localStorage.setItem('iziperfClientConfig', JSON.stringify(CLIENT_CONFIG));
+                applyClientTheme();
+                previewPersonalization();
+                
+                showAlert('🔄 Configuration réinitialisée à IziPerf par défaut !', 'warning');
+            }
+        }
+        
+        function removePersonalization() {
+            if (confirm('🗑️ Supprimer complètement la personnalisation ? L\'application redeviendra vierge.')) {
+                if (confirm('⚠️ Dernière confirmation : Retirer toute personnalisation ?')) {
+                    // Supprimer la config du localStorage
+                    localStorage.removeItem('iziperfClientConfig');
+                    
+                    // Réinitialiser à la config vierge
+                    CLIENT_CONFIG.name = "Mon Entreprise";
+                    CLIENT_CONFIG.industry = "Commerce";
+                    CLIENT_CONFIG.primaryColor = "#667eea";
+                    CLIENT_CONFIG.secondaryColor = "#764ba2";
+                    CLIENT_CONFIG.currency = "FCFA";
+                    CLIENT_CONFIG.logo = "";
+                    
+                    // Mettre à jour l'affichage
+                    loadPersonalizationInputs();
+                    applyClientTheme();
+                    previewPersonalization();
+                    
+                    showAlert('🗑️ Personnalisation supprimée ! Application redevenue vierge.', 'info');
+                }
+            }
+        }
+        
+        function loadPersonalizationInputs() {
+            document.getElementById('clientName').value = CLIENT_CONFIG.name;
+            document.getElementById('clientIndustry').value = CLIENT_CONFIG.industry;
+            document.getElementById('primaryColor').value = CLIENT_CONFIG.primaryColor;
+            document.getElementById('secondaryColor').value = CLIENT_CONFIG.secondaryColor;
+            document.getElementById('primaryColorText').value = CLIENT_CONFIG.primaryColor;
+            document.getElementById('secondaryColorText').value = CLIENT_CONFIG.secondaryColor;
+            document.getElementById('clientCurrency').value = CLIENT_CONFIG.currency;
+            document.getElementById('clientLogo').value = CLIENT_CONFIG.logo || '';
+        }
+        
+        function exportPersonalization() {
+            const config = {
+                ...CLIENT_CONFIG,
+                exportDate: new Date().toISOString(),
+                version: "IziPerf 2.0"
+            };
+            
+            const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${CLIENT_CONFIG.name.replace(/\s+/g, '_')}_config_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showAlert('📤 Configuration exportée avec succès !', 'success');
+        }
+        
+        function importPersonalization() {
+            const fileInput = document.getElementById('configFileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showAlert('⚠️ Veuillez sélectionner un fichier de configuration', 'warning');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const config = JSON.parse(e.target.result);
+                    
+                    // Validation basique
+                    if (!config.name || !config.primaryColor) {
+                        throw new Error('Configuration invalide');
+                    }
+                    
+                    // Appliquer la configuration
+                    Object.assign(CLIENT_CONFIG, config);
+                    
+                    // Mettre à jour les inputs
+                    loadPersonalizationInputs();
+                    
+                    // Sauvegarder et appliquer
+                    localStorage.setItem('iziperfClientConfig', JSON.stringify(CLIENT_CONFIG));
+                    applyClientTheme();
+                    previewPersonalization();
+                    
+                    showAlert(`📥 Configuration "${config.name}" importée avec succès !`, 'success');
+                    
+                } catch (error) {
+                    showAlert('❌ Erreur lors de l\'import : fichier invalide', 'error');
+                    console.error('Erreur import config:', error);
+                }
+            };
+            reader.readAsText(file);
+        }
+        
+        // ========================================
+        // TEMPLATES SECTORIELS PRÉDÉFINIS
+        // ========================================
+        
+        const INDUSTRY_TEMPLATES = {
+            "Restauration": {
+                name: "Restaurant Demo",
+                primaryColor: "#e74c3c",
+                secondaryColor: "#c0392b",
+                currency: "EUR",
+                description: "🍽️ Thème chaleureux pour restaurants",
+                icon: "🍽️"
+            },
+            "Commerce": {
+                name: "Boutique Demo",
+                primaryColor: "#27ae60",
+                secondaryColor: "#229954",
+                currency: "FCFA",
+                description: "🛍️ Thème moderne pour commerces",
+                icon: "🛍️"
+            },
+            "Production": {
+                name: "Usine Demo",
+                primaryColor: "#f39c12",
+                secondaryColor: "#e67e22",
+                currency: "FCFA",
+                description: "🏭 Thème industriel pour production",
+                icon: "🏭"
+            },
+            "Services": {
+                name: "Services Demo",
+                primaryColor: "#9b59b6",
+                secondaryColor: "#8e44ad",
+                currency: "EUR",
+                description: "🔧 Thème professionnel pour services",
+                icon: "🔧"
+            },
+            "Santé": {
+                name: "Clinique Demo",
+                primaryColor: "#16a085",
+                secondaryColor: "#1abc9c",
+                currency: "EUR",
+                description: "🏥 Thème apaisant pour santé",
+                icon: "🏥"
+            },
+            "Finance": {
+                name: "Banque Demo",
+                primaryColor: "#34495e",
+                secondaryColor: "#2c3e50",
+                currency: "USD",
+                description: "💰 Thème sérieux pour finance",
+                icon: "💰"
+            },
+            "Éducation": {
+                name: "École Demo",
+                primaryColor: "#2980b9",
+                secondaryColor: "#3498db",
+                currency: "EUR",
+                description: "🎓 Thème éducatif et moderne",
+                icon: "🎓"
+            },
+            "Distribution": {
+                name: "Logistique Demo",
+                primaryColor: "#d35400",
+                secondaryColor: "#e67e22",
+                currency: "FCFA",
+                description: "📦 Thème efficace pour distribution",
+                icon: "📦"
+            }
+        };
+        
+        function generateTemplateCards() {
+            const container = document.querySelector('#personalization-templates');
+            if (!container) return;
+            
+            container.innerHTML = Object.entries(INDUSTRY_TEMPLATES).map(([industry, template]) => `
+                <div style="background: white; border: 2px solid #eee; border-radius: 12px; padding: 20px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;" onclick="applyTemplate('${industry}')" onmouseover="this.style.borderColor='${template.primaryColor}'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#eee'; this.style.transform='translateY(0)'">
+                    <div style="background: linear-gradient(45deg, ${template.primaryColor}, ${template.secondaryColor}); position: absolute; top: 0; left: 0; right: 0; height: 4px;"></div>
+                    <div style="text-align: center; margin-bottom: 15px; font-size: 2rem;">${template.icon}</div>
+                    <h4 style="color: ${template.primaryColor}; margin: 0 0 8px 0; text-align: center; font-size: 1.1rem;">${industry}</h4>
+                    <p style="color: #666; margin: 0 0 15px 0; font-size: 0.9rem; text-align: center; line-height: 1.4;">${template.description}</p>
+                    <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 15px;">
+                        <div style="width: 20px; height: 20px; background: ${template.primaryColor}; border-radius: 50%; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                        <div style="width: 20px; height: 20px; background: ${template.secondaryColor}; border-radius: 50%; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                    </div>
+                    <div style="text-align: center; font-weight: bold; color: ${template.primaryColor}; font-size: 0.9rem;">${template.currency}</div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: ${template.primaryColor}20; color: ${template.primaryColor}; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">Modèle</div>
+                </div>
+            `).join('');
+        }
+        
+        function applyTemplate(industry) {
+            const template = INDUSTRY_TEMPLATES[industry];
+            if (!template) return;
+            
+            // Appliquer les valeurs du template
+            document.getElementById('clientName').value = template.name;
+            document.getElementById('clientIndustry').value = industry;
+            document.getElementById('primaryColor').value = template.primaryColor;
+            document.getElementById('secondaryColor').value = template.secondaryColor;
+            document.getElementById('primaryColorText').value = template.primaryColor;
+            document.getElementById('secondaryColorText').value = template.secondaryColor;
+            document.getElementById('clientCurrency').value = template.currency;
+            
+            // Mettre à jour la prévisualisation
+            previewPersonalization();
+            
+            showAlert(`${template.icon} Template "${industry}" appliqué ! N'oubliez pas de sauvegarder.`, 'success');
+        }
+        
+        function loadIndustryTemplate() {
+            const industry = document.getElementById('clientIndustry').value;
+            if (industry && INDUSTRY_TEMPLATES[industry]) {
+                const template = INDUSTRY_TEMPLATES[industry];
+                
+                // Proposer d'appliquer le template automatiquement
+                if (confirm(`Appliquer automatiquement le thème ${template.icon} "${industry}" ?`)) {
+                    applyTemplate(industry);
+                }
+            }
+        }
+        
+        function loadClientConfig() {
+            loadPersonalizationInputs();
+        }
+        
+        function saveClientConfig() {
+            savePersonalization();
+        }
+        
+        function resetClientConfig() {
+            resetToDefault();
+        }
+        
+        function applyClientConfigOnLoad() {
+            // Charger la config depuis localStorage si elle existe
+            const savedConfig = localStorage.getItem('iziperfClientConfig');
+            if (savedConfig) {
+                Object.assign(CLIENT_CONFIG, JSON.parse(savedConfig));
+            }
+            
+            // Appliquer le thème
+            applyClientTheme();
+            
+            // Charger dans les inputs si on est dans l'admin
+            if (document.getElementById('clientName')) {
+                loadPersonalizationInputs();
+            }
+        }
+        
+        // ========================================
+        // FONCTION TEMPLATE DE DÉMONSTRATION
+        // ========================================
+        
+        function createDemoData() {
+            if (confirm('Créer des données de démonstration ? Cela remplacera les données existantes.')) {
+                const demoProducts = [
+                    { id: 'demo1', name: 'Produit A - Standard', category: 'Catégorie 1', price: 1500, unit: 'Unité' },
+                    { id: 'demo2', name: 'Produit B - Premium', category: 'Catégorie 1', price: 2500, unit: 'Unité' },
+                    { id: 'demo3', name: 'Produit C - Pack', category: 'Catégorie 2', price: 4000, unit: 'Pack' },
+                ];
+                
+                const demoSales = [
+                    { id: 'sale1', date: '2025-10-01', client: 'Client A', product: 'Produit A - Standard', quantity: 10, unitPrice: 1500, valeur: 15000, invoice: 'F001' },
+                    { id: 'sale2', date: '2025-10-15', client: 'Client B', product: 'Produit B - Premium', quantity: 5, unitPrice: 2500, valeur: 12500, invoice: 'F002' },
+                    { id: 'sale3', date: '2025-10-20', client: 'Client A', product: 'Produit C - Pack', quantity: 3, unitPrice: 4000, valeur: 12000, invoice: 'F003' },
+                ];
+                
+                const demoPayments = [
+                    { id: 'pay1', date: '2025-10-05', client: 'Client A', amount: 10000, mode: 'Espèces', reference: 'ENC001' },
+                    { id: 'pay2', date: '2025-10-16', client: 'Client B', amount: 12500, mode: 'Virement', reference: 'ENC002' },
+                ];
+                
+                // Remplacer les données
+                productsData = demoProducts;
+                salesData = demoSales;
+                paymentsData = demoPayments;
+                
+                // Sauvegarder
+                saveToLocalStorage();
+                
+                // Mettre à jour l'affichage
+                updateProductsDisplay();
+                applyFilters();
+                applyRecapFilters();
+                updateClientsOverview();
+                
+                showAlert('🎯 Données de démonstration créées avec succès !', 'success');
+            }
+        }
+        
+        // ========================================
+        // FONCTION DE VÉRIFICATION SYSTÈME
+        // ========================================
+        
+        function systemCheck() {
+            console.log('🔍 === VÉRIFICATION SYSTÈME IZIPERF ===');
+            console.log('📊 Configuration Client:', CLIENT_CONFIG);
+            console.log('💾 Données:');
+            console.log(`   - Produits: ${productsData?.length || 0}`);
+            console.log(`   - Ventes: ${salesData?.length || 0}`);
+            console.log(`   - Encaissements: ${paymentsData?.length || 0}`);
+            console.log('🔗 Firebase:', firebase?.apps?.length > 0 ? 'Connecté' : 'Déconnecté');
+            
+            const status = {
+                config: CLIENT_CONFIG,
+                data: {
+                    products: productsData?.length || 0,
+                    sales: salesData?.length || 0,
+                    payments: paymentsData?.length || 0
+                },
+                firebase: firebase?.apps?.length > 0,
+                version: '2.0.0 IziPerf'
+            };
+            
+            showAlert(`🔍 Système IziPerf - Status: ✅ Opérationnel\n📊 Config: ${CLIENT_CONFIG.name}\n💾 Données: ${status.data.products} produits, ${status.data.sales} ventes`, 'info');
+            return status;
         }
         
         // ========================================
@@ -23715,7 +24364,7 @@ Date [ESPACES] Client [ESPACES] Montant
             }
         }, 5000); // Attendre 5 secondes que Firebase soit prêt
 
-        // � FONCTION DE SYNCHRONISATION INVENTORY → PRODUCTS
+        //   FONCTION DE SYNCHRONISATION INVENTORY → PRODUCTS
         async function syncInventoryToProducts() {
             console.log('🔄 === SYNCHRONISATION INVENTORY → PRODUCTS ===');
             
@@ -23865,7 +24514,7 @@ Date [ESPACES] Client [ESPACES] Montant
             }
         }
 
-        // �🔍 FONCTION DE DIAGNOSTIC DES PRODUITS/INVENTAIRE
+        //  🔍 FONCTION DE DIAGNOSTIC DES PRODUITS/INVENTAIRE
         async function diagnosticProductsInventory() {
             console.log('🔍 === DIAGNOSTIC COMPLET PRODUITS VS INVENTAIRE ===');
             
